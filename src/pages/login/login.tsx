@@ -6,7 +6,7 @@ import {
   errorSelector,
   loginUserThunk
 } from '../../services/slices/userSlice';
-import { useDispatch, useSelector } from '../../services/store';
+import { useDispatch, useSelector } from '@app-store';
 import { LoginUI } from '@ui-pages';
 
 export const Login: FC = () => {

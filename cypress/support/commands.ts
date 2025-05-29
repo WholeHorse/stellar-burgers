@@ -1,7 +1,9 @@
 /// <reference types="cypress" />
 Cypress.Commands.add('addBunAndIngredient', () => {
   cy.get('[data-cy="bun_0"] > .common_button').should('exist').click();
-  cy.get(':nth-child(4) > [data-cy="ingredient_0"] > .common_button').should('exist').click();
+  cy.get(':nth-child(4) > [data-cy="ingredient_0"] > .common_button')
+    .should('exist')
+    .click();
 });
 
 Cypress.Commands.add('checkConstructorStateWithIngredients', () => {
@@ -10,14 +12,17 @@ Cypress.Commands.add('checkConstructorStateWithIngredients', () => {
   cy.get('[data-cy="ingredient_constructor_item"]').should('exist');
 });
 
-Cypress.Commands.add('openIngredientModal', (ingredientSelector: string, expectedName: string) => {
-  cy.get(ingredientSelector).click();
-  cy.get('[data-cy="modal_ingredient"]').should('be.visible');
-  cy.get('[data-cy="ingredient_modal"] > .text_type_main-medium').should(
-    'contain.text',
-    expectedName
-  );
-});
+Cypress.Commands.add(
+  'openIngredientModal',
+  (ingredientSelector: string, expectedName: string) => {
+    cy.get(ingredientSelector).click();
+    cy.get('[data-cy="modal_ingredient"]').should('be.visible');
+    cy.get('[data-cy="ingredient_modal"] > .text_type_main-medium').should(
+      'contain.text',
+      expectedName
+    );
+  }
+);
 
 Cypress.Commands.add('closeModalByOverlay', () => {
   cy.get('[data-cy="modal_overlay"]').click({ force: true });
