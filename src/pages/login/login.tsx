@@ -34,7 +34,6 @@ export const Login: FC = () => {
     <LoginUI
       errorText={error!}
       email={email}
-
       password={password}
       setEmail={setEmail}
       setPassword={setPassword}

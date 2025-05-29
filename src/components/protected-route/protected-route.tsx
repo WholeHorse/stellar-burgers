@@ -13,9 +13,9 @@ type ProtectedRouteProps = {
 };
 
 export const ProtectedRoute: FC<ProtectedRouteProps> = ({
-                                                          onlyUnAuth,
-                                                          children
-                                                        }: ProtectedRouteProps) => {
+  onlyUnAuth,
+  children
+}: ProtectedRouteProps) => {
   const isAuthChecked = useSelector(isAuthCheckedSelector);
   const loadingSelector = useSelector(isLoadingSelector);
   const location = useLocation();

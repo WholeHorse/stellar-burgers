@@ -6,7 +6,6 @@ import { logoutUserThunk } from '../../services/slices/userSlice';
 
 export const ProfileMenu: FC = () => {
   const { pathname } = useLocation();
-
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
